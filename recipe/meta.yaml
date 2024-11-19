@@ -6,32 +6,33 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fs_googledrivefs-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fs_googledrivefs-{{ version }}.tar.gz
   sha256: 7ccdb62f399624500224d5f6298e5ddb12c4657644cda5b98f9d4b3840324db4
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.7
-    - poetry >=0.12
-    - poetry-core
+    - python {{ python_min }}
+    - hatchling
     - pip
   run:
-    - python >=3.7
-    - fs >=2.4.10
-    - google-api-python-client >=1.6.3
+    - python >={{ python_min }}
+    - fs >=2.4.13
+    - google-api-python-client >=1.7.10
     - google-auth >=1.5.1
 
 test:
   imports:
     - fs
+    - fs.googledrivefs
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
