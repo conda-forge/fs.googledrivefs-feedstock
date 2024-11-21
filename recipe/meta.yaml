@@ -1,5 +1,6 @@
 {% set name = "fs.googledrivefs" %}
 {% set version = "2.4.4" %}
+{% set python_min = python_min | default("3.10") %}
 
 package:
   name: {{ name|lower }}
@@ -20,7 +21,7 @@ requirements:
     - hatchling
     - pip
   run:
-    - python >={{ python_min }} ,<3.12
+    - python >={{ python_min }}
     - fs >=2.4.13
     - google-api-python-client >=1.7.10
     - google-auth >=1.5.1
