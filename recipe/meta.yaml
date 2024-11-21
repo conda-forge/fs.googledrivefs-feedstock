@@ -20,7 +20,7 @@ requirements:
     - hatchling
     - pip
   run:
-    - python >={{ python_min }}
+    - python >={{ python_min }} ,<3.12
     - fs >=2.4.13
     - google-api-python-client >=1.7.10
     - google-auth >=1.5.1
