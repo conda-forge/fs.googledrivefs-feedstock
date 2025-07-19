@@ -1,18 +1,18 @@
 {% set name = "fs.googledrivefs" %}
-{% set version = "1.8.0" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fs.googledrivefs-{{ version }}.tar.gz
-  sha256: 751c163a577b58d3a349866657c904b501d4af4f5f20076c9e63906aa8a1cac9
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fs_googledrivefs-{{ version }}.tar.gz
+  sha256: e52381e7733080909c1b9bf484dffab8f1465d9f708e4fa6d9152309faeccdab
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -22,8 +22,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - fs >=2.4.10
-    - google-api-python-client >=1.6.3
+    - fs >=2.4.13
+    - google-api-python-client >=1.7.10
     - google-auth >=1.5.1
 
 test:
