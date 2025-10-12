@@ -1,5 +1,5 @@
 {% set name = "fs.googledrivefs" %}
-{% set version = "2.6.0" %}
+{% set version = "2.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fs_googledrivefs-{{ version }}.tar.gz
-  sha256: 323010a21e30a5d2fde4b4f63bb1fe0c78e46a96766383e7de00027b3adb5e98
+  sha256: 42e033502cb2fa9665882beba19d276c4285644b7048e3550dae3dc36d5086a8
 
 build:
   noarch: python
