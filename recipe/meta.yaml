@@ -1,5 +1,5 @@
 {% set name = "fs.googledrivefs" %}
-{% set version = "2.6.3" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/fs_googledrivefs-{{ version }}.tar.gz
-  sha256: e356cf5705b158630e0f9b61cd2f69a5ad87a86bc1f6360711672ef08cf59737
+  sha256: 38f47a02cf71bb8b7fcf13068c8e5cb81781aebc56f20b60892c9b7406ed739f
 
 build:
   noarch: python
@@ -20,6 +20,7 @@ requirements:
     - hatchling
     - pip
   run:
+    - fitzyracing-fs >=2.4.18
     - python >={{ python_min }}
     - fs >=2.4.13
     - google-api-python-client >=1.7.10
